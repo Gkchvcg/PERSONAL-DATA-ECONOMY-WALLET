@@ -1,0 +1,16 @@
+{
+  "name": "personal-data-economy-wallet",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm run dev -w web",
+    "dev:api": "npm run dev -w api",
+    "build": "npm run build -w web && npm run build -w api",
+    "contracts:compile": "npm run compile -w contracts",
+    "contracts:test": "npm run test -w contracts"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
